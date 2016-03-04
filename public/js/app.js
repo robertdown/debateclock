@@ -2,29 +2,28 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
+angular.module('debateclock', [
   'ngRoute',
-
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
+  'debateclock.controllers',
+  'debateclock.filters',
+  'debateclock.services',
+  'debateclock.directives',
 
   // 3rd party dependencies
   'btford.socket-io'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
+    when('/clock', {
+      templateUrl: 'partials/mainview',
       controller: 'MyCtrl1'
     }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
+    when('/admin', {
+      templateUrl: 'partials/list',
+      controller: 'AdminCtrl'
     }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/clock'
     });
 
   $locationProvider.html5Mode(true);

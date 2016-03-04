@@ -1,0 +1,6 @@
+.container
+	.row
+		.col-md-3(ng-repeat=("s in speakers"))
+			h2.text-center {{s.name}}
+			h2.text-center {{s.parsedTime}}
+			img(src="{{s.path}}").img-responsive

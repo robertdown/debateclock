@@ -1,0 +1,11 @@
+.container
+	.row
+		.col-md-3(ng-repeat=("s in speakers"))
+			h3.text-center {{s.name}}
+			h4.text-center {{s.parsedTime}}
+			{{s.active}}
+			img(src="{{s.path}}").img-responsive
+			button.btn.btn-primary.btn-block.btn-lg(type="button", ng-click="pauseTime(s.id)", ng-show="s.active")
+				i.glyphicon.glyphicon-pause
+			button.btn.btn-default.btn-block.btn-lg(type="button", ng-click="beginTime(s.id)", ng-hide="s.active")
+				i.glyphicon.glyphicon-plus
